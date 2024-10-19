@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lawbot-438216",
+  "private_key_id": "7e0c3887b6108c4a6f83ac3699ae8ab774e994d6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZUk9mdVsqlfWv\n+vZPnPKBvJp4us1LeYCvk7jdUtuj44Jpdm++/pBc+LZxataG2oDMlYHxL6g7jS20\njtZ2KE6Myky8BXQZbLE4H3vbQxrdpuglrtLBAviPaA4Pe85/qO5Ys/l6WzI83Ijf\nkS6e7o1jJ88FkLhbca84O4JPcYLJ84FCyHBMKD0TbuVFtnHd5S7xwYa5EQ27CZ8A\n79qSsmK9o7hb3ey4OBZcc2ax9ydznbJ01tyV4OxiFm5iut3u/E+/TM8K2oWm/VIX\nTX+ItVzcAgmNjOV79l7eLomtWVUl7qmwhKQdjs62ETuiyArU9S8sHA8nVur6OJfS\n91n2n5zHAgMBAAECggEAS62dpICjxcLsWPdCceyRpOkPxCzMXYc1NjTvqEsYP+5x\n9hVwNfGYF1PqVdQ63Khor9LSJ1bzLqXSXA+vGvZtQ0AtnRcCBfSpCv87VvBqB+M1\nLjh7LasGPl7Jpenh9RBQyXbYWwU9qF3gr52NSgSMxFcnb+NNpFFagCKbgRQRzxU/\nS3nsq3cu0Nu8YnlUSG4bvgwJv3wC3Eq1kzIC9e0r/IxLDyx1Mqo4eYcWHR+tyd4e\npTHO70dDcTFy4MBdmlVkpHLgYEJyGFtzCHMLW7E0uIb5CvGkX1jmb6g6Urxin3ox\n8w9cdjPx8CMajm+XWsTQ31ctQOzKjzJ/SV6yuMNlOQKBgQDN9TVb1I71KgDjOjUl\nNLBSx11GnbcqYSHJsTfRx6CgX81LF7kFHtSTz7Fm0NetYbvchnEMtC/fk/qRgHhy\nBhCgyL+m8jnZAJH4c5DcIA20Qa6oYEeyeViezl/FG6CM/cIHxsXRSpSHXQYRPiK5\ngxmudVEuEyJvIU/XXDB2bwWdSQKBgQC+kxFlJ0FC4NnJyrmQjCzu10lTRh+MdomH\ngu60qHQLqJnkqYMWhvE3se+5c+Pl/HfWg64nt2H+RI1CYX/x1W/WHzRaaD30ZvhQ\n2iPH04jPre07Qy2hIYqOl5BcE1Uk5F/Kuf61JpmF9xkUnC0DdfeBNBVnIVVr02yp\n0NEChDu5jwKBgQCStPdkSV3nvxrQwVa4APcUkBSeR5wAoR3rSMRlNxjxBCz9L5HI\n1vQ/sfNBNMRdKcAiztVaYkOzs/oJiQTC3BUeIsF6DxMrw183JkLquh5o51ydba/E\nrvF0dbb8dbiAlgWPeoTQl5qDbbzzrVoY4Qz7G3BPLKwbkxQHaRDQXDcYmQKBgQCu\nixRLiQCEuFvALiR292vP9O37jyYmCAs+SfVHEWH3q5wHihm98CnN0PK28CWy5uD7\nX++KALOHplGakqIUZF/hxQK2KvNTfVvA8YoD4wJS9AFrXcPU6Ft27eoR6sL43xG9\nI0zdrVS/Femqrr+rg8gEViekJSuPbjz/63kCzQnGkQKBgF//HPRJVKaYyyCykcwS\nke5DLy4zCnnq2Y43LdFSrMG5HKpLO48aRV8nu4Lr6yOFHsKG/QJDLE56cca4t5wC\nvZslBU6E16AfbcGVzCN4WX3x1vKVzbd+lHKpCpbBlKpjoBNoWnB9SxUgWQlxstY2\nD1h9nTRI464JGm173LGXlXOC\n-----END PRIVATE KEY-----\n",
+  "client_email": "law-bot-new@lawbot-438216.iam.gserviceaccount.com",
+  "client_id": "104128726685814701176",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/law-bot-new%40lawbot-438216.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,14 @@
+langchain
+langchain-cli
+langchain_community
+langchain-community
+langchain-core
+langchain_core
+langchain_google_genai
+langchain-google-genai
+google-auth
+faiss-cpu
+beautifulsoup4
+pypdf
+PyPDF2
+streamlit
