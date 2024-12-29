@@ -13,10 +13,10 @@ warnings.filterwarnings('ignore')
 
 # Load the environment variables (replace with your actual API keys)
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = "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"
+os.environ["LANGCHAIN_API_KEY"] = ""
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 os.environ["LANGCHAIN_PROJECT"] = "RAG_APPLICATION_MEMORY"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBgw6Gp4-hJPm1WL1uu317Xzy1g5BJZtc4"
+os.environ["GOOGLE_API_KEY"] = ""
 
 # Initialize the embeddings model
 gemini_embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
