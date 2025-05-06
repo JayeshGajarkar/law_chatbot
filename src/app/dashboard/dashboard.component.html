@@ -1,0 +1,37 @@
+<div class="dashboard">
+  <div class="card flex justify-content-center">
+    <p-sidebar [(visible)]="sidebarVisible">
+        <h3>Sidebar</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </p-sidebar>
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
+  </div>
+  <h1>Chatbot Dashboard</h1>
+  <div class="chat-container">
+    <div class="chat-box" #chatBox>
+      <div *ngFor="let message of messages" [ngClass]="{'user-message': message.user, 'bot-message': !message.user}">
+        <span class="message-author"><b>{{ message.user ? 'You' : 'Bot' }}:</b>{{ message.text }}</span>
+      </div>
+      <div *ngIf="isTyping" class="typing-indicator">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message..."  >
+      <button (click)="startListening()" class="speech-button"><i class="pi pi-microphone"></i></button>
+      <button (click)="sendMessage()"><i class="pi pi-send"></i></button>
+      <button (click)="resetChat()"><i class="pi pi-trash"></i></button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

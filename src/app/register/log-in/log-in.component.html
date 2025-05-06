@@ -1,0 +1,31 @@
+<div *ngIf="!isLoggedIn()" class="login-container">
+    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()" class="login-form">
+        <h2>Login</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+        <span class="error-message" *ngIf="logInForm.get('name')!.invalid && logInForm.get('name')!.touched">
+            Name is required.
+        </span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+        <span class="error-message" *ngIf="logInForm.get('email')!.invalid && logInForm.get('email')!.touched">
+            A valid email is required.
+        </span>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+        <span class="error-message" *ngIf="logInForm.get('password')!.invalid && logInForm.get('password')!.touched">
+            Password must be at least 6 characters long.
+        </span>
+
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+</div>
+
+<div *ngIf="isLoggedIn()" class="profile-container">
+    <h2>Welcome, {{currUser?.name}}</h2>
+    <p><strong>Email:</strong> {{currUser?.email}}</p>
+    <button (click)="logOut()" class="logout-button">Log Out</button>
+</div>

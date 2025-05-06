@@ -1,0 +1,126 @@
+.about-container {
+  padding: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 60px auto;
+  border-left: 6px solid #f4c542;
+  transition: all 0.4s ease-in-out;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.about-container:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.about-container h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #f4c542;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.about-container h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #2c3e50;
+  margin-top: 2rem;
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+.about-container h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f4c542;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.about-container p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #3d3d3d;
+  text-align: justify;
+  margin-bottom: 1.25rem;
+}
+
+/* Lists */
+.about-container ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.about-container ul li {
+  font-size: 1.125rem;
+  background: rgba(244, 244, 244, 0.85);
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.about-container ul li:hover {
+  background: #f4c542;
+  color: #2c3e50;
+  font-weight: 600;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.about-container ul li::before {
+  content: "✔";
+  color: #f4c542;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 1.3rem;
+}
+
+/* Links */
+.about-container a {
+  color: #d48806;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-container a:hover {
+  text-decoration: underline;
+  color: #b37400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.8rem;
+  }
+
+  .about-container ul {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container p,
+  .about-container ul li {
+    font-size: 1.05rem;
+  }
+}

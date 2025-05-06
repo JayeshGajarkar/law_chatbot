@@ -1,0 +1,27 @@
+<div class="container">
+  <nav>
+    <div class="nav-left">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/dashboard">Dashboard</a>
+    </div>
+    
+    <div class="nav-right">
+      <ng-container *ngIf="isLoggedIn(); else guestLinks">
+        <a routerLink="/login">Profile</a>
+        <a (click)="logOut()" class="logout-btn">Logout</a> 
+      </ng-container>
+
+      <ng-template #guestLinks>
+        <a routerLink="/signin">Sign In</a>
+        <a routerLink="/login">Login</a>
+      </ng-template>
+    </div>
+  </nav>
+  <br><br>
+  <router-outlet></router-outlet>
+  <br><br><br>
+  <footer>
+    <p>&copy; 2025 Nyay Bot. All rights reserved.</p>
+  </footer>
+</div>
