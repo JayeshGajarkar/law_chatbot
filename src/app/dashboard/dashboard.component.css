@@ -35,7 +35,7 @@ body {
 
 /* Chat Box */
 .chat-box {
-  height: 350px;               
+  height: 400px;               
   overflow-y: auto;             
   padding: 20px;
   background: #fefefe;
@@ -155,3 +155,71 @@ body {
 .speech-container {
   text-align: center;
 }
+
+/* sidebar */
+
+
+/* Sidebar Container */
+.sidebar-container {
+  position: relative;
+}
+
+/* Sidebar Title */
+.sidebar-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Each History Entry */
+.history-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.history-entry:hover {
+  background-color: #f0f0f0;
+}
+
+/* Section Name */
+.section {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Trash Icon */
+.delete-icon {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-icon:hover {
+  font-size: 1.3rem;
+  color: #c0392b;
+}
+
+/* Sidebar Toggle Button */
+.menu-toggle {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 10001;
+  background-color: #f4c542 !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.menu-toggle:hover {
+  filter: brightness(0.95);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+

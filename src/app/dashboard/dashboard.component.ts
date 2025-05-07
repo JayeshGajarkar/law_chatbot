@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit{
   @ViewChild('chatBox') chatBox!: ElementRef;
   userMessage: string = '';
   messages!: Message[];
+  history:Message[][]=[];
   isTyping: boolean = false;
   botMessage: string = '';
   botTextIndex: number = 0;
@@ -24,11 +25,12 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(){
     this.messages=this.dataService.getMessages();
+    this.history=this.dataService.getHistory();
   }
 
   sendMessage() {
     if (this.userMessage.trim()) {
-      this.messages.push({ text: this.userMessage, user: true });
+      this.dataService.addMessage({ text: this.userMessage, user: true });
       const userQuery = this.userMessage;
       this.userMessage = '';
       this.scrollToBottom();
@@ -37,7 +39,7 @@ export class DashboardComponent implements OnInit{
       this.dataService.getResponce(userQuery).pipe(take(1)).subscribe(
         (data) => {
           this.botMessage = data.response;
-          this.messages.push({ text: '', user: false }); 
+          this.dataService.addMessage({ text:'', user: false }); 
           this.botTextIndex = 0;
           this.animateBotResponse();
           // console.log(this.messages);
@@ -101,6 +103,19 @@ export class DashboardComponent implements OnInit{
 
     this.recognition.start();
 
+  }
+
+  newChat(){
+    this.dataService.newChat();
+  }
+
+  openSection(index:number){
+    this.dataService.openSection(index);
+    this.messages=this.dataService.getMessages();
+  }
+
+  deleteSection(index:number){
+    this.dataService.deleteSection(index);
   }
 
   

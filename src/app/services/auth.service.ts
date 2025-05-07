@@ -17,8 +17,9 @@ export class AuthService {
   userLoign =new BehaviorSubject<User | null>(null);
 
   logIn(user: User) {
-    if(this.Users.find(u => u.email === user.email && u.password === user.password)) {
-      this.user = user;
+    const newUser=this.Users.find(u => u.email === user.email && u.password === user.password);
+    if(newUser) {
+      this.user = newUser;
       this.userLoign.next(this.user);
       alert('Logged In Successfully');
     }else{

@@ -1,14 +1,4 @@
 <div class="dashboard">
-  <div class="card flex justify-content-center">
-    <p-sidebar [(visible)]="sidebarVisible">
-        <h3>Sidebar</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-    </p-sidebar>
-    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
-  </div>
   <h1>Chatbot Dashboard</h1>
   <div class="chat-container">
     <div class="chat-box" #chatBox>
@@ -22,16 +12,29 @@
       </div>
     </div>
     <div class="chat-input">
-      <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message..."  >
+      <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message...">
       <button (click)="startListening()" class="speech-button"><i class="pi pi-microphone"></i></button>
       <button (click)="sendMessage()"><i class="pi pi-send"></i></button>
       <button (click)="resetChat()"><i class="pi pi-trash"></i></button>
+      <button (click)="newChat()"><i class="pi pi-plus"></i></button>
     </div>
   </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar-container">
+    <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000">
+      <h3 class="sidebar-title">Chat History</h3>
+      <div *ngFor="let chat of history; let i = index" class="history-entry">
+        <span class="section" (click)="openSection(i)">
+          Section {{ i }}
+        </span>
+        <i class="pi pi-trash delete-icon" (click)="deleteSection(i)"></i>
+      </div>
+    </p-sidebar>
+
+    <!-- Menu Toggle Button -->
+    <p-button class="menu-toggle" (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" label="History"></p-button>
+  </div>
+
+
 </div>
-
-
-
-
-
-
