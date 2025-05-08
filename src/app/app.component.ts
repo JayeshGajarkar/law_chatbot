@@ -15,14 +15,13 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.userLoign.subscribe(user => {
-      this.currUser = user;
-    });
+    this.authService.currUserSubject$.subscribe({
+      next:(data)=>{
+        this.currUser=data;
+      }
+    })
   }
 
-  isLoggedIn() {
-    return this.currUser !== null;
-  }
 
   logOut(){
     this.authService.logOut();

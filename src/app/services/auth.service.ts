@@ -1,48 +1,59 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable} from 'rxjs';
 import { User } from '../models/model';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  constructor(private router:Router) { }
+  currUser!:User | null;
+  private currUserSubject=new BehaviorSubject(this.currUser);
+  currUserSubject$=this.currUserSubject.asObservable();
 
-  private user:User | null=null;
-  // private isLoggedIn = new Subject<boolean>();
-  private Users: User[] = [{name:'jayesh',email:'jayeshgajarkar@gmail.com',password:'J@yesh1711'}];
+  constructor(private http:HttpClient){}
 
-  userLoign =new BehaviorSubject<User | null>(null);
-
-  logIn(user: User) {
-    const newUser=this.Users.find(u => u.email === user.email && u.password === user.password);
-    if(newUser) {
-      this.user = newUser;
-      this.userLoign.next(this.user);
-      alert('Logged In Successfully');
-    }else{
-      alert('Invalid Credentials');
-    }
-    this.router.navigate(['/dashboard']);
+  signUp(user:User):Observable<any>{
+    return this.http.post(`http://localhost:3000/user/signIn`,user);
   }
 
-  logOut() {
-    this.user = null;
-    this.userLoign.next(this.user);
-    this.router.navigate(['/login']);
+  sendOtpForSignUp(email:string):Observable<any>{
+    return this.http.post(`http://localhost:3000/user/sendOtpForSignUp`,{email});
   }
 
-  signIn(user: User) {
-    this.Users.push(user);
-    this.logIn(user);
-    // alert('Signed In Successfully');
+  sendOtpForPassword(email:string):Observable<any>{
+    return this.http.post(`http://localhost:3000/user/sendOtpForPassword`,{email});
   }
 
-  isLoggedIn() {
-    return this.user !== null;
+  verifyOtp(email:string,otp:string):Observable<any>{
+    return this.http.post(`http://localhost:3000/user/verifyOtp`,{email,otp});
   }
 
+  changePassword(user:Partial<User>):Observable<any>{
+    return this.http.put(`http://localhost:3000/user/changePassword`,user);
+  }
 
+  logIn(user:User|null):Observable<any>{
+    return this.http.post(`http://localhost:3000/user/logIn`,user);
+  }
+
+  logOut(){
+    localStorage.removeItem('token');
+    this.currUserSubject.next(null);
+  }
+
+  notifyLogIn(user:User){
+    this.currUser=user;
+    this.currUserSubject.next(user);
+  }
+  
+  updateUser(userId:number,user:User):Observable<any>{
+    return this.http.put(`http://localhost:3000/user/update/${userId}`,user)
+  }
+
+  deleteUser(userId:number):Observable<any>{
+    return this.http.delete(`http://localhost:3000/user/delete/${userId}`)
+  }
 }

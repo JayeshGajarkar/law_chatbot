@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sign Up Container */
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 90vh;
+  padding: 40px 20px;
+}
+
+/* Sign Up Form */
+.sign-up-form {
+  max-width: 450px;
+  width: 100%;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #f4c542;
+  text-align: center;
+}
+
+.sign-up-form h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #f4c542;
+  box-shadow: 0 0 5px rgba(244, 197, 66, 0.5);
+}
+
+/* Error Messages */
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* OTP Button */
+.otp-btn {
+  padding: 10px 20px;
+  background-color: #f4c542;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.otp-btn:hover {
+  background-color: #e5b632;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #34495e;
+  transform: scale(1.05);
+}
+
+/* Form Actions and Links */
+.form-actions {
+  margin-top: 15px;
+}
+
+.additional-links {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.additional-links a {
+  color: #f4c542;
+  text-decoration: none;
+}
+
+.additional-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sign-up-container {
+    padding: 20px;
+    height: auto;
+  }
+
+  .sign-up-form {
+    width: 100%;
+  }
+}
+
+.time {
+  text-align: center;
+  color: red;
+}

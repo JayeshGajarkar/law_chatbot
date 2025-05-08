@@ -1,0 +1,75 @@
+<div class="sign-up-container">
+    <div class="sign-up-form">
+        <h2 class="form-title">Sign Up</h2>
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" formControlName="name" placeholder="Enter your full name" />
+                <div *ngIf="signUpForm.get('name')!.invalid && signUpForm.get('name')!.touched" class="error-message">
+                    Name is Invalid.
+                </div>
+                <div *ngIf="signUpForm.get('name')!.errors?.['noSpaceAndNumber']" class="error-message">
+                    Name can not Start with space or contain number.
+                </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="Enter your email" />
+                <span *ngIf="otpVerified" style="color: rgb(52, 187, 52);">verified</span>
+                <div *ngIf="signUpForm.get('email')!.invalid && signUpForm.get('email')!.touched" class="error-message">
+                    Please enter a valid email.
+                </div>
+                <div *ngIf="signUpForm.get('email')!.errors?.['noSpaceAllowed']" class="error-message">
+                    Spaces are not allowed in the email.
+                </div>
+            </div>
+
+            <div *ngIf="signUpForm.get('email')!.valid && !otpVerified">
+                <button *ngIf="!otpSent" type="button" (click)="sendOtp()" class="otp-btn">Send OTP</button>
+            </div>
+
+            <div class="time" *ngIf="otpSent">Remainning Time: {{time}}</div>
+
+            <form *ngIf="otpSent" (ngSubmit)="verifyOtp()">
+                <label for="otp">OTP</label>
+                <input type="text" name="otp" id="otp" [(ngModel)]="otp">
+                <div>
+                    <button type="submit" class="otp-btn">Verify</button>
+                </div>
+            </form>
+
+            
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Create a password" />
+                <div *ngIf="signUpForm.get('password')!.invalid && signUpForm.get('password')!.touched"
+                    class="error-message">
+                    Password is required and must be at least 6 characters long.
+                </div>
+                <div *ngIf="signUpForm.get('password')!.errors?.['noSpaceAllowed']" class="error-message">
+                    Spaces are not allowed in the password.
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" [disabled]="signUpForm.invalid || !otpVerified" class="submit-btn">Sign
+                    Up</button>
+            </div>
+
+            <!-- Login Link -->
+            <div class="additional-links">
+                <p>Already have an account? <a routerLink="/login">Log In</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<p-toast></p-toast>

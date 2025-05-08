@@ -3,8 +3,9 @@ export interface Message {
   user: boolean;
 }
 
-export interface User {
-   name: string;
-   email: string;
-   password: string;
+export interface User{
+  userId:number;
+  name:string;
+  email:string;
+  password:string;
 }

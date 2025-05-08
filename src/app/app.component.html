@@ -7,14 +7,14 @@
     </div>
     
     <div class="nav-right">
-      <ng-container *ngIf="isLoggedIn(); else guestLinks">
+      <ng-container *ngIf="currUser; else guestLinks">
         <a routerLink="/login">Profile</a>
-        <a (click)="logOut()" class="logout-btn">Logout</a> 
+        <a (click)="logOut()" class="logout-btn">Log Out</a> 
       </ng-container>
 
       <ng-template #guestLinks>
-        <a routerLink="/signin">Sign In</a>
-        <a routerLink="/login">Login</a>
+        <a routerLink="/signup">Sign Up</a>
+        <a routerLink="/login">Log In</a>
       </ng-template>
     </div>
   </nav>
